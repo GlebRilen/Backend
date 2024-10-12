@@ -8,7 +8,7 @@ let bodyParser = require('body-parser')
 let jsonParser = bodyParser.json({ limit: '9000kb' })
 app.use(cors())
 const start = async function(){
-    app.listen(port, () => console.log('server has been started at port: '+port))
+    app.listen(port, '0.0.0.0', () => console.log('server has been started at port: '+port))
 }
 start()
 app.use('/api/v1/crypto', jsonParser, getOrderData)
