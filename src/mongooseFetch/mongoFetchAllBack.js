@@ -6,6 +6,7 @@ const Pattern = require('./patternSchema.js')
 app.use(express.json())
 
 const mongoFetchAllBack = async function(req, res){
+    console.log('request for fetch all mongo')
     await mongoose.connect(dbURL).then(()=> console.log('connected to db to fethc all'))
     Pattern
         .find({'data.SL' : false, 'data.target261' : false, 'data.cancell' : false})
